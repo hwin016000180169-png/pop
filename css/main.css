@@ -189,10 +189,10 @@ body {overflow-x: hidden;}
 
 .sec4 .part2 {max-width: 1920px; margin: 0 auto; display: flex;}
 .sec4 .part2 .imgbox{ margin-top: 50px; width: 523px; height: 397px; position: absolute; bottom: 0; left: 0;}
-.sec4 .part2 .imgbox img {width: 100%; height: 100%; object-fit: cover;}
+.sec4 .part2 .imgbox img { height: 100%; object-fit: cover;}
 
 .sec4 .part2 .videobox { width: 740px; height: 397px; overflow: hidden; margin-left: 231px; margin-top: 50px; position: absolute; bottom: 0; right: 0;}
-.sec4 .part2 .videobox video {width: 100%; height: 100%;   object-fit: cover;}
+.sec4 .part2 .videobox video { height: 100%;    width: 100%;object-fit: cover;}
 
 
 
