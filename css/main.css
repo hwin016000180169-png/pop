@@ -2,7 +2,9 @@
 
 @import url(./font.css);
 @import url(reset.css);
-body {overflow-x: hidden;}
+
+ html {overflow-x: hidden; /* 세로 스크롤만 */}
+html {  scroll-behavior: auto;}
 .centerbox { margin: 0 auto; }
 
 
@@ -243,8 +245,9 @@ body {overflow-x: hidden;}
 .sec6 .part1 .title1-1 .titlebox2{ position: absolute;  display: flex;}
 .sec6 .part1 .title1-1 .titlebox2 h2{  font-family: "Noto Serif KR", serif; font-size: 70px; font-weight:600; color:#2F2F2F ;}
 .sec6 .part1 .title1-1 .titlebox2 p{font-family: "Noto Serif KR", serif; font-size: 20px; font-weight:400; color:#474747 ; position: absolute; top: 70px; left: 5px; margin-top: 14px;}
-.sec6 .part1 .textbox { margin-top: 150px; font-family: "Noto Serif KR", serif ; font-weight: 400; font-size: 20px; letter-spacing: -1px;}
-.sec6 .part1 .textbox p { margin-bottom: 40px; color: #2F2F2F;} 
+.sec6 .part1 .textbox { margin-top: 150px; font-family: "Noto Serif KR", serif ; font-weight: 400; font-size: 20px; letter-spacing: -1px; }
+.sec6 .part1 .textbox p { margin-bottom: 40px; color: #2F2F2F; font-family: 'Pretendard'; font-weight: 400; } 
+.sec6 .part1 .textbox p span {font-family: 'Pretendard'; font-weight: 500; margin-right: 30px; ; width: 100px;  display: inline-block; color: #000; }
 
 /* .sec67_box .slideBox {display: flex; width: 200vw;}
 .sec67_box .slideBox section {width: 100vw;} */
@@ -398,6 +401,76 @@ body {overflow-x: hidden;}
 
 
 
+.sec6 .movie .overlay,
+.sec7 .movie .overlay,
+.sec8 .movie .overlay,
+.sec9 .movie .overlay,
+.sec18 .movie .overlay {
+  pointer-events: none;
+}
+
+
+
+
+.sec6 .part2 .mockup_pc .moniter img,
+.sec7 .part2 .mockup_pc .moniter img,
+.sec8 .part2 .mockup_pc .moniter img,
+.sec9 .part2 .mockup_pc .moniter img,
+.sec18 .part2 .mockup_pc .moniter img {
+  position: absolute;
+  left: 0;
+  top: 0;          /* 시작점 */
+  width: 100%;
+  min-height: 110%; /* 프레임보다 약간 크게 → 스크롤 효과 보장 */
+  object-fit: cover;
+
+  
+}
+
+
+
+
+
+
+.sec6 .part2,
+.sec7 .part2,
+.sec8 .part2,
+.sec9 .part2,
+.sec18 .part2 {
+  position: relative;
+  z-index: 10; /* overlay(2)보다 충분히 큼 */
+}
+
+.sec6 .part2 .mockup_pc,
+.sec7 .part2 .mockup_pc,
+.sec8 .part2 .mockup_pc,
+.sec9 .part2 .mockup_pc,
+.sec18 .part2 .mockup_pc {
+  position: absolute;
+  z-index: 20;
+}
+
+/* 중복/오타 정리 */
+.sec6 .point,
+.sec7 .point,
+.sec8 .point,
+.sec9 .point,
+.sec18 .point { position: absolute; bottom: 0; right: 0; }
+
+
+section[id] { scroll-margin-top: 120px; }
+
+
+.swiper-slide { flex-shrink: 0; }  /* 필요 시 */
+.team1 li,
+.team2 > li { flex-shrink: 0; }    /* 이미 team1/team2는 0이지만 재확인 */
+
+
+
+
+html.lenis, html.lenis body { height: auto; }   /* 문서 스크롤 컨테이너 단일화 */
+.lenis.lenis-smooth { scroll-behavior: auto; }  /* 브라우저 기본 스무스 비활성 */
+.lenis.lenis-stopped { overflow: hidden; }      /* 필요 시 스크롤 잠금 */
 
 /* ✅ 모든 섹션 공통으로 정리 */
 .sec6 .part2,
@@ -467,7 +540,9 @@ body {overflow-x: hidden;}
 .sec7 .part1 .title1-1 .titlebox2 h2{  font-family: "Noto Serif KR", serif; font-size: 70px; font-weight:600;  color: #e5e5e5 ;}
 .sec7 .part1 .title1-1 .titlebox2 p{font-family: "Noto Serif KR", serif; font-size: 20px; font-weight:400; color:#d8d8d8 ; position: absolute; top: 70px; left: 5px; margin-top: 14px;}
 .sec7 .part1 .textbox { margin-top: 150px; font-family: "Noto Serif KR", serif ; font-weight: 400; font-size: 20px; letter-spacing: -1px; position: absolute; z-index: 11;}
-.sec7 .part1 .textbox p { margin-bottom: 40px; color: #f9f9f9;} 
+
+.sec7 .part1 .textbox p span {font-family: 'Pretendard'; font-weight: 500; margin-right: 30px; ; width: 100px;  display: inline-block; color: #f9f9f9; }
+.sec7 .part1 .textbox p { margin-bottom: 40px; color: #f9f9f9; font-family: 'Pretendard'; font-weight: 400; } 
 
 
 .sec7 .part1 .makers { display: flex;  margin-top: 460px;}
@@ -605,7 +680,9 @@ body {overflow-x: hidden;}
 .sec8 .part1 .title1-1 .titlebox2 h2{  font-family: "Noto Serif KR", serif; font-size: 70px; font-weight:600; ;color: #474747;}
 .sec8 .part1 .title1-1 .titlebox2 p{font-family: "Noto Serif KR", serif; font-size: 20px; font-weight:400; color:#474747 ; position: absolute; top: 70px; left: 5px; margin-top: 14px;}
 .sec8 .part1 .textbox { margin-top: 150px; font-family: "Noto Serif KR", serif ; font-weight: 400; font-size: 20px; letter-spacing: -1px;}
-.sec8 .part1 .textbox p { margin-bottom: 40px; color: #2F2F2F;} 
+
+.sec8 .part1 .textbox p span {font-family: 'Pretendard'; font-weight: 500; margin-right: 30px; ; width: 100px;  display: inline-block; color: #2F2F2F; }
+.sec8 .part1 .textbox p { margin-bottom: 40px; color: #2F2F2F; font-family: 'Pretendard'; font-weight: 400; } 
 
 
 
@@ -728,7 +805,10 @@ body {overflow-x: hidden;}
 .sec9 .part1 .title1-1 .titlebox2 h2{  font-family: "Noto Serif KR", serif; font-size: 70px; font-weight:600;  color: #e5e5e5 ;}
 .sec9 .part1 .title1-1 .titlebox2 p{font-family: "Noto Serif KR", serif; font-size: 20px; font-weight:400; color:#e5e5e5 ; position: absolute; top: 70px; left: 5px; margin-top: 14px;}
 .sec9 .part1 .textbox { margin-top: 150px; font-family: "Noto Serif KR", serif ; font-weight: 400; font-size: 20px; letter-spacing: -1px; position: absolute; z-index: 11;}
-.sec9 .part1 .textbox p { margin-bottom: 40px; color: #e5e5e5;} 
+
+.sec9 .part1 .textbox p span {font-family: 'Pretendard'; font-weight: 500; margin-right: 30px; ; width: 100px;  display: inline-block; color: #e5e5e5; }
+.sec9 .part1 .textbox p { margin-bottom: 40px; color: #e5e5e5; font-family: 'Pretendard'; font-weight: 400; } 
+
 
 
 .sec9 .part1 .makers { display: flex;  margin-top: 400px;}
@@ -917,13 +997,10 @@ body {overflow-x: hidden;}
 }
 
 
-body, html {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* 세로 스크롤만 */
-}
+
 .sec11 { height: 100vh; }
 
+.sec11,.sec12,.sec13,.sec14,.sec15,.sec16,.sec17 {width: 101%;}
 
 .team1 {
   display: flex; 
@@ -946,7 +1023,7 @@ color: #2A2A2A;}
 .sec11 .centerbox .part1 .part1_1 p { margin-bottom: 15px;}
 
 
-.sec12 {height: 100vh; display: flex; align-items: center;}
+/* .sec12 {height: 100vh; display: flex; align-items: center;}
 .sec12 .centerbox {}
 .sec12 .centerbox .part1 {display: flex;}
 .sec12 .centerbox .part1 .textbox { height: 100%;  margin-top: 40px; margin-left: 80px;} 
@@ -957,12 +1034,12 @@ color: #2A2A2A;}
   color: #2A2A2A;
 }
 .sec12 .centerbox .part1 .textbox p.text1{ margin-top: 40px;} 
-.sec12 .centerbox .part1 .textbox p.text2{ margin-top: 40px;} 
+.sec12 .centerbox .part1 .textbox p.text2{ margin-top: 40px;} sec1
 .sec12 .centerbox .part2 {display: flex; margin-top: 30px;}
 .sec12 .centerbox .part2 img { height: 100%; margin-right: 20px;}
 .sec12 .centerbox .part2 .textbox {} 
 .sec12 .centerbox .part2 .textbox p.text1{ margin-top: 40px;} 
-.sec12 .centerbox .part2 .textbox p.text2{ margin-top: 40px;} 
+.sec12 .centerbox .part2 .textbox p.text2{ margin-top: 40px;}  */
 
 
 .sec13 { display: flex;  align-items: center; height: 100vh;}
@@ -978,30 +1055,32 @@ color: #2A2A2A;}
 .sec13 .centerbox .part2 .sec13_apimg {position: absolute;  left: 45%; bottom: 6%; border: 1px solid #b9b9b9;}
 .sec13 .centerbox .part2 .textbox {  margin-left: 300px; margin-top: 50px;}
 
-
+.sec14 .centerbox .part2 img {box-shadow: 0 0   20px;} 
+.sec16 .part2 img {box-shadow: 0 0   20px;} 
 
 .sec14 {height: 100vh; display: flex; align-items: center; }
 .sec14 .centerbox  {display: flex;}
 .sec14 .centerbox .part1 img {  margin-right: 20px; }
 .sec14 .centerbox .part1 .textbox { height: 100%; margin-left: 200px; margin-top: 50px; }
 .sec14 .centerbox .part1 .textbox p {font-size: 17px; font-family: 'Pretendard'; font-weight: 400;
-  color: #2A2A2A; margin-bottom: 10px;}
+  color: #fff; margin-bottom: 10px;}
 .sec14 .centerbox .part2   {display: flex;   position: relative;}
 .sec14 .centerbox .part2  .textbox { height: 100%; margin-top: 200px; margin-left: 100px;}
 .sec14 .centerbox .part2  .textbox p{font-size: 17px; font-family: 'Pretendard'; font-weight: 400;
-  color: #2A2A2A; margin-bottom: 10px;   word-break: keep-all; width: 590px;}
-.sec14 .centerbox .part2   img {margin-right: 30px; border: 1px solid #b9b9b9;}
+  color: #fff; margin-bottom: 10px;   word-break: keep-all; width: 590px;}
+.sec14 .centerbox .part2   img {margin-right: 30px; }
 .sec14text1 { margin-top: 40px;}
 .sec14apimg { position: absolute; left: 11%; top: 32%;}
 .sec14text2 { margin-top: 100px;}
-
 .sec15 { height: 100vh; display: flex; align-items: center; background: #ffffff;}
 
 .sec15 .centerbox {display: flex;}
 .sec15 .part1  img {display: block;  margin-top: 20px  ;} 
 .sec15 .part1 {}
 .sec15 .part2 { display: flex; height: 100%; margin-top: 50px; margin-left: 30px; position: relative; }  
-.sec15 .part2 img {  }
+.team1 .part2 img {  }
+.team1 .part2 .noboxshadow {box-shadow: none;}
+
 .sec15 .part2 .textbox{ margin-left: 30px; margin-top: 100px; margin-left: 200px;} 
 .sec15 .part2 .textbox2{ margin-top: 200px; margin-left: 200px;}  
 .sec15 p { color: #ececec; margin-bottom: 15px;font-size: 17px; font-family: 'Pretendard'; font-weight: 400; }
@@ -1038,16 +1117,16 @@ color: #2A2A2A;}
 .sec18 {  position: relative;}
 .sec18 .centerbox { max-width: 1500px;  display: flex; padding-top: 180px; }
 .sec18 .part1 {}
-.sec18 .part1 .sec6_btn{ background: #D6C190; color: #08132D;  margin-top: 40px; margin-left: 50px;}
+.sec18 .part1 .sec18_btn{ background: #F7FAFC; color: #2D3748;  margin-top: 40px; margin-left: 50px;}
 .sec18 .part1 .titlebox {display: flex;  align-items: end; margin-bottom: 10px;}
-.sec18 .part1 .titlebox h2 {font-family: "Noto Serif KR", serif; font-size: 70px; font-weight:600; color:#2F2F2F ;}
-.sec18 .part1 .titlebox p {font-family: "Noto Serif KR", serif; font-size: 30px; font-weight:400; color:#474747 ;  margin-bottom:12px;}
+.sec18 .part1 .titlebox h2 {font-family: "Noto Serif KR", serif; font-size: 70px; font-weight:600; color:#fff ;}
+.sec18 .part1 .titlebox p {font-family: "Noto Serif KR", serif; font-size: 30px; font-weight:400; color:#fff ;  margin-bottom:12px;}
 .sec18 .part1 .title1-1  {position: relative; top: -30px;}
 .sec18 .part1 .title1-1 .titlebox2{ position: absolute;  display: flex;}
-.sec18 .part1 .title1-1 .titlebox2 h2{  font-family: "Noto Serif KR", serif; font-size: 70px; font-weight:600; color:#2F2F2F ;}
-.sec18 .part1 .title1-1 .titlebox2 p{font-family: "Noto Serif KR", serif; font-size: 20px; font-weight:400; color:#474747 ; position: absolute; top: 70px; left: 5px; margin-top: 14px;}
+.sec18 .part1 .title1-1 .titlebox2 h2{  font-family: "Noto Serif KR", serif; font-size: 70px; font-weight:600; color:#fff ;}
+.sec18 .part1 .title1-1 .titlebox2 p{font-family: "Noto Serif KR", serif; font-size: 20px; font-weight:400; color:#fff ; position: absolute; top: 70px; left: 5px; margin-top: 14px;}
 .sec18 .part1 .textbox { margin-top: 150px; font-family: "Noto Serif KR", serif ; font-weight: 400; font-size: 20px; letter-spacing: -1px;}
-.sec18 .part1 .textbox p { margin-bottom: 40px; color: #2F2F2F;} 
+.sec18 .part1 .textbox p { margin-bottom: 40px; color: #fff;} 
 
 /* .sec67_box .slideBox {display: flex; width: 200vw;}
 .sec67_box .slideBox section {width: 100vw;} */
@@ -1067,7 +1146,7 @@ color: #2A2A2A;}
 
 .sec18 .part1 .makers .make2 .make2-1 { display: flex; align-items: center;}
 .sec18 .part1 .makers .make2 .make2-1 em { font-style: normal; font-size: 20px ; }
-.sec18 .part1 .makers .make2 .make2-1 p{ margin-top: 2px; margin-left: 34px; display: flex; gap: 10px; font-size: 18px;}
+.sec18 .part1 .makers .make2 .make2-1 p{ margin-top: 2px; margin-left: 34px; display: flex; gap: 10px; font-size: 18px; color: #fff;}
 
 .sec18 .part1 .makers .make2 .make2-2 { display: flex; align-items: center; margin-top: 35px;}
 .sec18 .part1 .makers .make2 .make2-2 em { font-style: normal; font-size: 20px ; }
@@ -1078,13 +1157,16 @@ color: #2A2A2A;}
 .sec18 .part1 .makers .make1 .make1-2 em,
 .sec18 .part1 .makers .make2 .make2-1 em,
 .sec18 .part1 .makers .make2 .make2-2 em {
-  font-family: 'Pretendard'; font-weight: 600; font-size: 20px; color: #2F2F2F;
+  font-family: 'Pretendard'; font-weight: 600; font-size: 20px; color: #fff;
 }
 
 .sec18 .part1 .makers .make1 .make1-1 p,
 .sec18 .part1 .makers .make1 .make1-2 p {
-  font-family: 'Pretendard'; font-weight: 400; font-size: 18px; color: #2F2F2F;
+  font-family: 'Pretendard'; font-weight: 400; font-size: 18px; color: #fff;
 }
+
+.sec18 .part1 .textbox p span {font-family: 'Pretendard'; font-weight: 500; margin-right: 30px; ; width: 100px;  display: inline-block; color: #fff; }
+.sec18 .part1 .textbox p { margin-bottom: 40px; color: #fff; font-family: 'Pretendard'; font-weight: 400; } 
 .sec18 .part2 { position: relative;}
 .sec18 .part2 .mockup_pc{ position: absolute; z-index: 10; left: 200px; top: 30px;}
 .sec18 .part2 .mockup_pc .moniter { width: 590px; height: 362px; overflow: hidden; position: absolute; z-index: 10; left: 99px; top: 44px; }
@@ -1092,5 +1174,134 @@ color: #2A2A2A;}
 
 .sec18 {position: relative; }
 .sec18 .movie {width: 100%; height: 100vh;  position: absolute; right: 0; top: 0; border-radius: 0 0 0 0; overflow: hidden; z-index: -1;; }
-.sec18 .movie .overlay {content: ""; position: absolute; width: 100%; height: 100%; background: rgba(0,0,0,0.8); left: 0; top: 0; z-index: 2;}
+.sec18 .movie .overlay {content: ""; position: absolute; width: 100%; height: 100%; background: rgba(0,0,0,0.9); left: 0; top: 0; z-index: 2;}
 .sec18 .movie video {width: 100%; height: 100%; object-fit: cover;}
+
+.team2 {
+  display: flex;              /* 가로 배열 */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.team2 > li {
+  flex-shrink: 0;             /* 줄어들지 않음 */
+  width: 100vw;               /* 한 화면 꽉 */
+  height: 100vh;              /* 세로도 꽉 */
+  position: relative;
+  overflow: hidden;
+}
+
+.sec19 { height: 100vh; background: #fff; display: flex; align-items: center;} 
+.sec19 .centerbox .part1 { position: relative; margin-right: 200px;}
+.sec19 .part2 { margin-top: 0px; }
+.sec19 .part2 .textbox p{ margin-bottom: 10px; color: #1a1a1a;font-size: 17px; font-family: 'Pretendard'; font-weight: 400; }
+.sec19img1 { position: absolute;right: -20%; bottom: -20%;box-shadow: -5px 5px 30px rgba(0,0,0,0.2);}
+.sec19 .centerbox { display: flex;}
+.sec19text1{ margin-top: 40px;}
+.sec19text2{ margin-top: 40px;}
+.sec19text3{ margin-top: 40px;} 
+
+.sec20 { height: 100vh; background: #fff; display: flex; align-items: center;} 
+.sec20 .centerbox .part1 { position: relative; margin-right: 300px;}
+.sec20 .part2 { margin-top: 150px; }
+.sec20 .part2 .textbox p{ margin-bottom: 10px; color: #1a1a1a;font-size: 17px; font-family: 'Pretendard'; font-weight: 400; }
+.sec20img1 { position: absolute; left: 30%; top: 30%;box-shadow: -5px 5px 30px rgba(0,0,0,0.2);}
+.sec20 .centerbox { display: flex;}
+.sec20text1{ margin-top: 40px;}
+.sec20text2{ margin-top: 40px;}
+
+
+.sec21 { height: 100vh; background: #fff; display: flex; align-items: center;} 
+.sec21 .centerbox .part1 { position: relative; margin-right: 300px;}
+.sec21 .part2 { margin-top: 150px; }
+.sec21 .part2 .textbox p{ margin-bottom: 10px; color: #1a1a1a;font-size: 17px; font-family: 'Pretendard'; font-weight: 400; }
+.sec21img1 { position: absolute; left: 30%; top: 30%;box-shadow: -5px 5px 30px rgba(0,0,0,0.2);}
+.sec21 .centerbox { display: flex;}
+.sec21text1{ margin-top: 40px;}
+.sec21text2{ margin-top: 40px;}
+.sec21text3{ margin-top: 40px;}
+
+
+
+.sec22 {/* height: 100vh; */ display: flex; align-items: center; justify-content: center;  position: relative; z-index: 0;}
+.sec22 .centerbox  {   display: flex; align-items: flex-start;  }
+.sec22 .centerbox .part1 {/*  display: flex; */ position: relative;  ;  }
+.sec22 .centerbox .part1 .titlebox {margin-right: 100px; height: 100%;  margin-top: 40px;height: auto; position: relative; margin-bottom: 20px;}
+.sec22 .centerbox .part1 .titlebox h2{ font-family: "Noto Serif KR", serif; font-weight: 600; font-size: 70px; color: #2f2f2f;}
+.sec22 .centerbox .part1 .titlebox p{ display: block;  font-family: "Noto Serif KR", serif; font-weight: 400; font-size: 20px ; color: #2f2f2f; position: absolute;  top: 90%; left: 5px; }
+
+
+.sec22img1 { /* position: absolute; */ width: 214px; height: 726px; right:30%; top: 10%;}
+#section22 {}
+#section22 .centerbox {width: 1060px; display: flex; justify-content: flex-end; position: relative; }
+.sec22 .centerbox .part1 {position: absolute; left: 50%; margin-left: -530px; }
+.sec22 .centerbox .part1 .sec22fixbox {   }
+
+
+.sec22 .centerbox .part2 .imgbox { margin-top: 130px;position: relative; display: block;}
+.sec22 .centerbox .part2 .imgbox .sec22img2 {width: 800px; margin-left: 20px; display: block; }
+
+
+
+
+
+.sec23 {height: 100vh; display: flex; }
+.sec23 .centerbox{  margin-top: 200px; }
+.sec23 .centerbox .titlebox{}
+.sec23 .centerbox .titlebox h2{font-family: "Noto Serif KR", serif; font-weight: 600; font-size: 70px; color: #2f2f2f; }
+
+.sec23 .centerbox .bannerbox{ position: relative; right: 50%; transform: translateX(-50%);   margin-top: 30px;}
+.sec23 .centerbox .bannerbox li{  position: absolute;}
+.sec23 .centerbox .bannerbox li img{}
+
+
+.sec23 .centerbox .bannerbox li.sec23_1{top: 0;}
+.sec23 .centerbox .bannerbox li.sec23_2{top: 10px;}
+.sec23 .centerbox .bannerbox li.sec23_3{top: 30px;}
+.sec23 .centerbox .bannerbox li.sec23_4{top: 50px;}
+.sec23 .centerbox .bannerbox li.sec23_5{top: 70px;}
+.sec23 .centerbox .bannerbox li.sec23_6{top: 100px;}
+
+footer { background: url(../images/secmain.png) ; height: 100vh; display: flex; align-items: center; justify-content: center;}
+footer .titlebox { display: flex ; flex-direction: column; text-align: center;} 
+footer .titlebox h2 {font-family: "Noto Serif KR", serif; font-weight: 400; font-size: 200px; color: #474747; }
+footer .subtext { margin-top: 20px;}
+footer .subtext p {font-family: "Noto Serif KR", serif; font-weight: 400; color: #474747;  font-size: 30px;  letter-spacing: -1px;}
+
+span.circle {
+  position: fixed;
+  top: 0; left: 0;
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: url('../images/sec2img.png');
+  background-size: cover;
+  border: 1px solid rgba(0,0,0,0.5);
+  pointer-events: none;
+  /* transform: translate(-50%, -50%);  ← 이 줄 삭제 */
+  z-index: 9999;             /* 다른 요소 위로 안전하게 */
+  will-change: transform;    /* 성능 최적화 */
+}
+
+span.circle.on {
+  width: 100px; height: 60px;  background: rgba(0,0,0,0.2) ; border: none ; border-radius: 0; background-size: auto;
+}
+
+span.circle.on2 {
+  width: 40px; height: 40px;  background: rgba(0,0,0,0.2) ; border: none ; border-radius: 0; 
+}
+span.circle.on3 {
+  width: 50px; height: 50px;  background: rgba(0,0,0,0.2) ; border: none ; border-radius: 0; 
+}
+span.circle.on4 {
+  width: 70px; height: 40px;  background: rgba(0,0,0,0.2) ; border: none ; border-radius: 0; 
+}
+
+span.circle.on5 {
+  width: 40px; height: 50px;  background: rgba(0,0,0,0.2) ; border: none ; 
+}
+
+
+
+
+
