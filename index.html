@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>김동휘포폴</title>
+        <title>김동휘 포폴</title>
         <link rel="stylesheet" href="css/main.css">
         <!-- <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/> -->
@@ -1950,7 +1950,6 @@
                                 let secTop = $(this).offset().top;
                                 let secH = $(this).outerHeight();
 
-                                
                                 if (scrT >= secTop - winH && scrT < secTop + secH / 2) {
                                     $('.float_menu a').removeClass('on');
                                     $('.float_menu a').eq(i+1).addClass('on');
@@ -1959,6 +1958,7 @@
                                     $('.float_menu a').eq(0).addClass('on');
                                 }
                             });
+
                             $('.sec10').each(function () {
                                 let secTop = $(this).offset().top;
                                 let secH = $(this).outerHeight();
@@ -1968,6 +1968,7 @@
                                     $('.float_menu a').eq(8).addClass('on');
                                 }
                             });
+                            
                             $('.sec18').each(function () {
                                 let secTop = $(this).offset().top;
                                 let secH = $(this).outerHeight();
@@ -1975,6 +1976,26 @@
                                 if (scrT >= secTop - winH / 2 && scrT < secTop + secH - winH / 2) {
                                     $('.float_menu a').removeClass('on');
                                     $('.float_menu a').eq(9).addClass('on');
+                                }
+                            });
+
+                            $('.sec22,.sec23').each(function () {
+                                let secTop = $(this).offset().top;
+                                let secH = $(this).outerHeight();
+
+                                if (scrT >= secTop - winH / 2 && scrT < secTop + secH - winH / 2) {
+                                    $('.float_menu a').removeClass('on');
+                                    $('.float_menu a').eq(10).addClass('on');
+                                }
+                            });
+
+                            $('footer').each(function () {
+                                let secTop = $(this).offset().top;
+                                let secH = $(this).outerHeight();
+
+                                if (scrT >= secTop - winH / 2 && scrT < secTop + secH - winH / 2) {
+                                    $('.float_menu a').removeClass('on');
+                                    $('.float_menu a').eq(11).addClass('on');
                                 }
                             });
                         })
